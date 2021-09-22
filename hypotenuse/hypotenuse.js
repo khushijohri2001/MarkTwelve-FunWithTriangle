@@ -6,10 +6,15 @@ var outputMessage= document.querySelector("#output");
 calculateBtn.addEventListener('click', calculateHypotenuse);
 
 function calculateHypotenuse(){
+    if (baseValue.value >= 0 && perpedicularValue.value >= 0){
     var hypotenuse= hypotenuseLength(Number(baseValue.value), Number(perpedicularValue.value));
 
     var hypotenuseValue= Math.sqrt(hypotenuse);
     outputMessage.innerText= "Hypotenuse is: " + hypotenuseValue;
+}
+else {
+    outputMessage.innerText= "Error: Please Enter a positive value ";
+}
 }
 
 function hypotenuseLength(b,p){
